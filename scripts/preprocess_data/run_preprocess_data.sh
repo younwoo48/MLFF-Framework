@@ -21,6 +21,7 @@ python preprocess.py \
     --test-data ${DATADIR}/Testset.xyz \
     --test-data-output-name test \
     --out-path ${OUTDIR} \
+    --energy-type free_energy \
 
 # OOD
 python preprocess.py \

@@ -256,7 +256,8 @@ class BaseTrainer(ABC):
         loader = DataLoader(
             dataset,
             collate_fn=collater,
-            num_workers=self.config["optim"]["num_workers"],
+            # num_workers=self.config["optim"]["num_workers"],
+            num_workers=0,
             pin_memory=True,
             batch_sampler=sampler,
         )
@@ -387,7 +388,7 @@ class BaseTrainer(ABC):
         self.model = OCPDataParallel(
             module=self.model,
             output_device=self.device,
-            num_gpus=1 if not self.cpu else 0,
+            num_gpus=0,
         )
         if distutils.initialized() and not self.config["noddp"]:
             # wrapping pytorch DDP

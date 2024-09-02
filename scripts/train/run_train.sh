@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GPU=$1
+GPU=0
 
 MODEL_ARRAY=(
     "BPNN"
@@ -13,13 +13,13 @@ MODEL_ARRAY=(
     "MACE"
     "SCN"
 )
-MODEL=$2
+MODEL=GemNet-T
 
 DATA_ARRAY=(
     "SiN"
     "HfO"
 )
-DATA=$3
+DATA=HfO
 
 BENCHMARK_HOME=$(realpath ../../)
 cd $BENCHMARK_HOME

@@ -95,7 +95,7 @@ def write_extxyz_to_lmdb(args):
 
     # Start preprocessing
     for key, xyzfile, lmdbfile in key_xyz_lmdb_list:
-        trajectory = ase.io.read(xyzfile, index=":", format="extxyz")
+        trajectory = ase.io.read(xyzfile, index =':',format = 'extxyz')
         if key == "train" and args.save_normalization:
             save_normalization_statistics(
                 trajectory=trajectory, 
